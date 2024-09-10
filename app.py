@@ -91,11 +91,6 @@ async def on_message_with_image(message: cl.Message):
 
     # Processing images exclusively
     images = [file for file in message.elements if "image" in file.mime] if message.elements else []
-
-    print("*********************")
-    print(message.elements)
-    print(images)
-    print("*********************")
     if images:
         # Read the first image and encode it to base64
         with open(images[0].path, "rb") as f:
